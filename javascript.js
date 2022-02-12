@@ -22,6 +22,7 @@ function playerSelection() {
         }
         else {
             console.log("Pick Again")
+            break;
         }
     }
     
