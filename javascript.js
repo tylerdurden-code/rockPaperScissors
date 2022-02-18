@@ -3,30 +3,30 @@ function computerPlay() {
     num = Math.floor(Math.random() * 3);
     return computerChoice[num];
 }
-function playerSelection() {
-    let rightChoice = false;
-    while (rightChoice === false) {
-        playerChoice = prompt("Choose (1 for Rock) (2 for Paper) (3 for Scissors)");
-        playerChoice = parseInt(playerChoice);
-        if (playerChoice === 1) {
-            rightChoice = true;
-            return "rock"  
-        }
-        else if (playerChoice === 2) {
-            return "paper"
-            rightChoice = true;
-        }
-        else if (playerChoice === 3) {
-            return "scissors"
-            rightChoice = true;
-        }
-        else {
-            console.log("Pick Again")
-            break;
-        }
-    }
+// function playerSelection() {
+//     let rightChoice = false;
+//     while (rightChoice === false) {
+//         playerChoice = prompt("Choose (1 for Rock) (2 for Paper) (3 for Scissors)");
+//         playerChoice = parseInt(playerChoice);
+//         if (playerChoice === 1) {
+//             rightChoice = true;
+//             return "rock"  
+//         }
+//         else if (playerChoice === 2) {
+//             return "paper"
+//             rightChoice = true;
+//         }
+//         else if (playerChoice === 3) {
+//             return "scissors"
+//             rightChoice = true;
+//         }
+//         else {
+//             console.log("Pick Again")
+//             break;
+//         }
+//     }
     
-}
+// }
 
 function playRound(p,c) {
     if (p === c) {
@@ -74,17 +74,30 @@ function game() {
 
 var playerScore = 0;
 var computerScore = 0;
-game();
-if (playerScore === computerScore) {
-    console.log("Game finished. ITS A TIE!");
+// game();
+// if (playerScore === computerScore) {
+//     console.log("Game finished. ITS A TIE!");
+// }
+// else if (playerScore > computerScore) {
+//     console.log("Game finished. YOU WON!");
+// }
+// else {
+//     console.log("Game finished. YOU LOST");
+// }
+
+
+function playerSelection() {
+    const btnRock = document.getElementById("btnRock");
+    const btnPaper = document.getElementById("btnPaper");
+    const btnScissors = document.getElementById("btnScissors");
+
+    btnRock.addEventListener('click',function () {
+        playRound("rock",computerPlay())
+    })
+    btnPaper.addEventListener('click',function () {
+        playRound("paper",computerPlay())
+    })
+    btnScissors.addEventListener('click',function () {
+        playRound("scissors",computerPlay())
+    })
 }
-else if (playerScore > computerScore) {
-    console.log("Game finished. YOU WON!");
-}
-else {
-    console.log("Game finished. YOU LOST");
-}
-
-
-
-
